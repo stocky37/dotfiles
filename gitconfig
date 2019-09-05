@@ -1,0 +1,28 @@
+[push]
+  default = current
+
+[color]
+  ui = auto
+
+[core]
+  autocrlf = input
+
+[commit]
+  template = ~/.gitmessage
+
+[fetch]
+  prune = true
+
+[rebase]
+  autosquash = true
+
+[diff]
+  colorMoved = zebra
+
+[pager]
+  branch = false
+
+[include]
+  path = ~/.gitconfig.local
+  path = ~/.gitaliases
+

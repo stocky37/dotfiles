@@ -1,0 +1,12 @@
+#!/bin/sh
+
+FILE="$1"
+LINE_NUMBER="$2"
+USAGE="$0 <file> <line_number>"
+
+if [ "$FILE" = '' ] || [ "$LINE_NUMBER" = '' ]; then
+  echo "$USAGE"
+  exit 1
+fi
+
+sed -i -e "${LINE_NUMBER}d" "$FILE"
