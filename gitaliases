@@ -29,7 +29,10 @@
   # add non-whitespace changes
   addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 
+
+
   # log graph aliases
+  lg = !"git lg1"
   lg0 = log --oneline --decorate --all --graph
   lg1 = !"git lg1-specific --all"
   lg2 = !"git lg2-specific --all"
