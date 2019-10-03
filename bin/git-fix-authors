@@ -1,19 +1,24 @@
 #!/bin/bash
 
-DEFAULT_NAME="$(git config user.name)"
-DEFAULT_EMAIL="$(git config user.email)"
-export OLD_NAME="${1:-$DEFAULT_NAME}"
-export NEW_NAME="${2:-$DEFAULT_NAME}"
-export NEW_EMAIL="${3:-$DEFAULT_EMAIL}"
+export OLD_EMAIL=$(git config --global --includes user.email)
+export NAME="$(git config user.name)"
+export EMAIL="$(git config user.email)"
 
-echo "Old:" $OLD_NAME "<*>"
-echo "New:" "$NEW_NAME <$NEW_EMAIL>"
+echo "Old: * <$OLD_EMAIL>"
+echo "New: $NAME <$EMAIL>"
 echo "To undo, use: git reset $(git rev-parse HEAD)"
 
 git filter-branch --env-filter \
-'if [ "$GIT_AUTHOR_NAME" = "${OLD_NAME}" ]; then
-    export GIT_AUTHOR_NAME="${NEW_NAME}"
-    export GIT_AUTHOR_EMAIL="${NEW_EMAIL}"
-    export GIT_COMMITTER_NAME="${NEW_NAME}"
-    export GIT_COMMITTER_EMAIL="${NEW_EMAIL}"
-fi'
+'
+echo "$GIT_COMMITTER_EMAIL"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$NAME"
+    export GIT_COMMITTER_EMAIL="$EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$NAME"
+    export GIT_AUTHOR_EMAIL="$EMAIL"
+fi
+' "$@"  # -- HEAD~2..HEAD
