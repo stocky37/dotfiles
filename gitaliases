@@ -12,7 +12,7 @@
   unstage = reset HEAD --
   last = log -1
   pom = push -u origin master
-  fixup = commit --fixup
+  fix = commit --fixup
 
   # fix & re-push a commit
   redo = "!git cim && git pf"
