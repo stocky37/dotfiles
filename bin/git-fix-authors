@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export OLD_EMAIL=$(git config --global --includes user.email)
+export OLD_EMAIL="${1:-$(git config --global --includes user.email)}"; shift
 export NAME="$(git config user.name)"
 export EMAIL="$(git config user.email)"
 
