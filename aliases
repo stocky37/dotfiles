@@ -2,11 +2,6 @@
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
-alias ..="cd .."
-alias ...="cd ../../"
-alias ....="cd ../../../"
-alias .....="cd ../../../../"
-alias ......="cd../../../../../"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -14,12 +9,10 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # Common typos
 alias gti=git
 
-# Git Shortcuts
-alias lg="git lg"
-
 alias gpg=gpg2
 alias base64="base64 -w 0"
 alias ssh-finger="ssh-keygen -l -E md5 -f"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
