@@ -11,6 +11,9 @@ source ~/.antigenrc
 # forget what this is, probably alt+backspace delete word
 bindkey "^[[3;3~" kill-word
 
+bindkey '^[[3;5~' kill-word                           # [Ctrl-Backspace] - delete word backward
+bindkey '^H' backward-kill-word                       # [Ctrl-Delete] - delete word forward
+
 # Ctrl+space shortcut for autocomplete
 bindkey '^ ' autosuggest-accept
 
