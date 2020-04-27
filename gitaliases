@@ -9,7 +9,7 @@
   br = branch
   cim = commit --amend --no-edit -av
   lg = log --oneline --graph --decorate --all
-  unstage = reset HEAD --
+  unstage = restore --staged
   last = log -1
   pom = push -u origin master
   fix = commit --fixup
