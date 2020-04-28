@@ -7,6 +7,7 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
+  pager = delta --theme 'Monokai Extended'
 
 [commit]
   template = ~/.gitmessage
@@ -27,3 +28,5 @@
   path = ~/.gitconfig.local
   path = ~/.gitaliases
 
+[interactive]
+  diffFilter = delta --color-only --theme 'Monokai Extended'
