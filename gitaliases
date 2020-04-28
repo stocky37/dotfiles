@@ -29,6 +29,8 @@
   # add non-whitespace changes
   addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 
+  # delete local & remote branch
+  nuke = !sh -c 'git branch -D $1 && git push origin :$1' -
 
 
   # log graph aliases
