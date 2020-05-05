@@ -8,6 +8,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # Common typos
 alias gti=git
+alias tnk=tkn
 
 alias gpg=gpg2
 alias base64="base64 -w 0"
