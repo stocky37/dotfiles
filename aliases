@@ -14,6 +14,12 @@ alias gpg=gpg2
 alias base64="base64 -w 0"
 alias ssh-finger="ssh-keygen -l -E md5 -f"
 
+# extra git aliases
+alias lg="git lg"
+alias lga="git lga"
+alias lg1="git lg1"
+alias lga1="git lga1"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 

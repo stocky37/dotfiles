@@ -12,6 +12,7 @@
   unstage = restore --staged
   last = log -1
   pom = push -u origin master
+  rao = remote add origin
   fix = commit --fixup
 
   # fix & re-push a commit
