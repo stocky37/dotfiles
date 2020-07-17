@@ -7,7 +7,7 @@
   pf = push --force-with-lease
   st = status -sb
   br = branch
-  cim = commit --amend --no-edit -av
+  cim = commit --amend --no-edit -v
   lg = log --oneline --graph --decorate --all
   unstage = restore --staged
   last = log -1
@@ -16,7 +16,7 @@
   fix = commit --fixup
 
   # fix & re-push a commit
-  redo = "!git cim && git pf"
+  redo = "!git cim -a && git pf"
 
   # initialiase a repo
   it = "!git init && git commit --allow-empty -m 'root'"
