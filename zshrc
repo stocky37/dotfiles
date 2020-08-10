@@ -9,14 +9,27 @@ export LANG=en_US.UTF-8
 export EDITOR=vim
 
 # uncomment for profiling zsh startup
-# zmodload zsh/zprof
+#zmodload zsh/zprof
 
 # set to a 256 colour terminal if not in a tmux session
 if [ "$TMUX" = '' ]; then
   export TERM="xterm-256color"
 fi
 
-#[[ -f /usr/share/fzf/shell/key-bindings.zsh ]] && source /usr/share/fzf/shell/key-bindings.zsh
+# configure zgen & plugins
+ZGEN_RESET_ON_CHANGE=(
+  "${ZDOTDIR:-$HOME}/.zshrc"
+  "${ZDOTDIR:-$HOME}/.zshrc.local"
+  "${ZDOTDIR:-$HOME}/.zsh_plugins"
+)
+
+export ZGEN_DIR="${ZDOTDIR:-$HOME}/.zgen"
+source "$ZGEN_DIR/zgen.zsh"
+if ! zgen saved; then
+  zgen oh-my-zsh
+  [[ -f "${ZDOTDIR:-$HOME}/.zsh_plugins" ]] && zgen loadall < "${ZDOTDIR:-$HOME}/.zsh_plugins"
+  zgen save
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -41,6 +54,7 @@ bindkey '^ ' autosuggest-accept
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # uncomment for profiling zsh startup
-# zprof
+#zprof
 
 return 0
+
