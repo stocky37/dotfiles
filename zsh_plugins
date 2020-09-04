@@ -11,7 +11,8 @@ robbyrussell/oh-my-zsh plugins/tmux
 
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
 
 romkatv/powerlevel10k powerlevel10k
-zdharma/fast-syntax-highlighting
+#zdharma/fast-syntax-highlighting
 unixorn/autoupdate-zgen
