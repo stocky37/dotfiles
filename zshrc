@@ -24,7 +24,7 @@ if [ "$TMUX" = '' ]; then
 fi
 
 #######################
-# Install Plugins     #
+# zgen                #
 #######################
 ZGEN_RESET_ON_CHANGE=(
   "${ZDOTDIR:-$HOME}/.zshrc"
@@ -44,9 +44,8 @@ fi
 
 
 #######################
-# Customising Plugins #
+# plugins             #
 #######################
-
 # autosuggest
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^ ' autosuggest-accept # [Ctrl-Space]
@@ -55,7 +54,7 @@ bindkey '^ ' autosuggest-accept # [Ctrl-Space]
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #######################
-# Key Bindings        #
+# key bindings        #
 #######################
 bindkey '^[[3;5~' kill-word         # [Ctrl-Delete] - delete word forward
 bindkey "^[[3;3~" kill-word         # [Alt-Delete] - delete word forward
@@ -63,12 +62,12 @@ bindkey '^H' backward-kill-word     # [Ctrl-Backspace] - delete word backward
 
 
 #######################
-# Misc                #
+# misc                #
 #######################
 [[ -f $(which virtualenvwrapper.sh) ]] && source $(which virtualenvwrapper.sh)
 
 #######################
-# Include files       #
+# includes            #
 #######################
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.aliases ]] && source ~/.aliases
