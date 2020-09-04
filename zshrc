@@ -69,6 +69,9 @@ bindkey '^q' push-line-or-edit      # [Ctrl-q] - kill command, paste in on next 
 #######################
 [[ -f $(which virtualenvwrapper.sh) ]] && source $(which virtualenvwrapper.sh)
 
+# undo the 'rm -i' alias from omz
+unalias rm
+
 #######################
 # includes            #
 #######################
