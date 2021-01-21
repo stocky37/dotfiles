@@ -1,5 +1,5 @@
 [push]
-  default = current
+  default = upstream
 
 [color]
   ui = auto
@@ -43,3 +43,5 @@
 
 [init]
   defaultBranch = main
+[pull]
+	ff = only
