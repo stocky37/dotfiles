@@ -13,7 +13,6 @@ fi
 #######################
 ZGEN_RESET_ON_CHANGE=(
   "$ZDOTDIR/.zshrc"
-  "$ZDOTDIR/.zshrc.local"
   "$ZSHDIR/plugins.txt"
 )
 
