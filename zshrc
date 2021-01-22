@@ -1,3 +1,6 @@
+# uncomment for profiling zsh startup
+#zmodload zsh/zprof
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,40 +8,26 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# uncomment for profiling zsh startup
-#zmodload zsh/zprof
-
-#######################
-# env                 #
-#######################
-export LANG=en_US.UTF-8
-export EDITOR=vim
-
-
-#######################
-# tmux                #
-#######################
-# set to a 256 colour terminal if not in a tmux session
-if [ "$TMUX" = '' ]; then
-  export TERM="xterm-256color"
-fi
+# z-dirs
+ZDOTDIR="${ZDOTDIR:-$HOME}"
+ZSHDIR="$ZDOTDIR/.zsh"
+ZGEN_DIR="${ZGEN_DIR:-$ZDOTDIR/.zgenom}"
+ZGENOM_DIR="$ZGEN_DIR/zgenom"
 
 #######################
 # zgen                #
 #######################
 ZGEN_RESET_ON_CHANGE=(
-  "${ZDOTDIR:-$HOME}/.zshrc"
-  "${ZDOTDIR:-$HOME}/.zshrc.local"
-  "${ZDOTDIR:-$HOME}/.zsh_plugins"
+  "$ZDOTDIR/.zshrc"
+  "$ZDOTDIR/.zshrc.local"
+  "$ZDOTDIR/.zsh_plugins"
 )
 
-export ZGEN_DIR="${ZDOTDIR:-$HOME}/.zgen"
-source "$ZGEN_DIR/zgen.zsh"
+[[ ! -f "$ZGENOM_DIR/zgenom.zsh" ]] && git clone https://github.com/jandamm/zgenom.git "$ZGENOM_DIR"
+source "$ZGENOM_DIR/zgenom.zsh"
 if ! zgen saved; then
-  # clone omz without source the root script
-  # zgen clone robbyrussell/oh-my-zsh
-  zgen oh-my-zsh
-  [[ -f "${ZDOTDIR:-$HOME}/.zsh_plugins" ]] && zgen loadall < "${ZDOTDIR:-$HOME}/.zsh_plugins"
+  zgen ohmyzsh
+  [[ -f "$ZDOTDIR/.zsh_plugins" ]] && zgen loadall < "$ZDOTDIR/.zsh_plugins"
   zgen save
 fi
 
