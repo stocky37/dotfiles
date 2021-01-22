@@ -20,6 +20,3 @@ alias lga="git lga"
 alias lg1="git lg1"
 alias lga1="git lga1"
 
-# Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
-

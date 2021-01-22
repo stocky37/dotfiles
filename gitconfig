@@ -27,8 +27,9 @@
   branch = false
 
 [include]
-  path = ~/.gitconfig.local
+  path = ~/.gitconfig.private
   path = ~/.gitaliases
+  path = ~/.gitaliases.private
 
 [interactive]
   diffFilter = delta --color-only --theme 'Monokai Extended'

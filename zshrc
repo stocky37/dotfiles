@@ -44,8 +44,6 @@ bindkey "^[[3;3~" kill-word         # [Alt-Delete] - delete word forward
 bindkey '^H' backward-kill-word     # [Ctrl-Backspace] - delete word backward
 bindkey '^q' push-line-or-edit      # [Ctrl-q] - kill command, paste in on next prompt
 
-
-
 #######################
 # misc                #
 #######################
@@ -56,8 +54,9 @@ unalias rm
 #######################
 # includes            #
 #######################
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.aliases ]] && source ~/.aliases
+[[ -f ~/.zshrc.private ]] && source ~/.zshrc.private
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # uncomment for profiling zsh startup
 #zprof

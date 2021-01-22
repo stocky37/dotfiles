@@ -10,5 +10,6 @@ export ZSHDIR="$ZDOTDIR/.zsh"
 export ZGEN_DIR="${ZGEN_DIR:-$ZDOTDIR/.zgenom}"
 export ZGENOM_DIR="$ZGEN_DIR/zgenom"
 
-# local config
+# external configs
+[[ -f ~/.zshenv.private ]] && source ~/.zshenv.private
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local

@@ -45,5 +45,3 @@
   lg1 = log --graph --format=log1
   lga1 = "!git lg1 --all"
 
-[include]
-  path = ~/.gitaliases.local
