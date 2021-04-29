@@ -26,4 +26,6 @@ zpm-zsh/clipboard
 djui/alias-tips
 #laggardkernel/zsh-thefuck
 
+
+stocky37/zsh-flux
 # if having issues with 256colors - chrissicool/zsh-256color
