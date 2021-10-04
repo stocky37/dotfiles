@@ -18,10 +18,11 @@ ZGEN_RESET_ON_CHANGE=(
 
 [[ ! -f "$ZGENOM_DIR/zgenom.zsh" ]] && git clone https://github.com/jandamm/zgenom.git "$ZGENOM_DIR"
 source "$ZGENOM_DIR/zgenom.zsh"
-if ! zgen saved; then
-  zgen ohmyzsh
-  [[ -f "$ZSHDIR/plugins.txt" ]] && zgen loadall < "$ZSHDIR/plugins.txt"
-  zgen save
+zgenom autoupdate --background
+if ! zgenom saved; then
+  zgenom ohmyzsh
+  [[ -f "$ZSHDIR/plugins.txt" ]] && zgenom loadall < "$ZSHDIR/plugins.txt"
+  zgenom save
 fi
 
 #######################
