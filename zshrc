@@ -30,7 +30,7 @@ fi
 #######################
 
 # autosuggest
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=242
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272a4"
 bindkey '^ ' autosuggest-accept # [Ctrl-Space]
 
 # powerlevel10k
