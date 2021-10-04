@@ -21,3 +21,6 @@ alias lg1="git lg1"
 alias lga1="git lga1"
 
 alias cdt="cd $(mktemp -d)"
+
+
+kustinit="kustomize init --autodetect --recursive"
