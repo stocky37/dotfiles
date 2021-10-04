@@ -24,6 +24,7 @@ romkatv/powerlevel10k powerlevel10k
 
 zpm-zsh/clipboard 
 djui/alias-tips
+agkozak/zsh-z
 #laggardkernel/zsh-thefuck
 
 
