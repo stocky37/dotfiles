@@ -49,7 +49,11 @@ bindkey '^q' push-line-or-edit      # [Ctrl-q] - kill command, paste in on next 
 #######################
 
 # undo the 'rm -i' alias from omz
-unalias rm
+# unalias rm
+
+# directory navigation
+setopt auto_cd
+setopt autopushd
 
 #######################
 # includes            #
