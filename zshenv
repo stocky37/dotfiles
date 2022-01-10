@@ -9,6 +9,7 @@ export ZDOTDIR="$HOME"
 export ZSHDIR="$ZDOTDIR/.zsh"
 export ZGEN_DIR="${ZGEN_DIR:-$ZDOTDIR/.zgenom}"
 export ZGENOM_DIR="$ZGEN_DIR/zgenom"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # external configs
 [[ -f ~/.zshenv.private ]] && source ~/.zshenv.private
