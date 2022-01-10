@@ -14,8 +14,8 @@ ohmyzsh/ohmyzsh plugins/virtualenvwrapper
 
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-#zsh-users/zsh-syntax-highlighting
-zdharma/fast-syntax-highlighting
+zsh-users/zsh-syntax-highlighting
+#zdharma/fast-syntax-highlighting
 
 unixorn/autoupdate-zgen
 unixorn/git-extra-commands
