@@ -23,4 +23,4 @@ alias lga1="git lga1"
 alias cdt="cd $(mktemp -d)"
 
 
-kustinit="kustomize init --autodetect --recursive"
+alias kust=kustomize
