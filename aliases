@@ -24,3 +24,4 @@ alias cdt="cd $(mktemp -d)"
 
 
 alias kust=kustomize
+alias kssh="kitty +kitten ssh"
