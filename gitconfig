@@ -7,7 +7,7 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
-  pager = delta --theme 'Monokai Extended'
+  pager = delta
 
 [commit]
   template = ~/.gitmessage
@@ -32,7 +32,10 @@
   path = ~/.gitaliases.private
 
 [interactive]
-  diffFilter = delta --color-only --theme 'Monokai Extended'
+  diffFilter = delta --color-only
+
+[add.interactive]
+  useBuiltin = false
 
 [pretty]
   custom = %C(bold blue)%h%C(reset) - %C(white)%s%C(reset)%C(auto)%d%C(reset)%C(dim white) - %an%C(reset)
@@ -44,7 +47,20 @@
 
 [init]
   defaultBranch = main
+
 [pull]
-	ff = only
+  ff = only
+
 [merge]
-	tool = meld
+  #tool = meld
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+  
+[delta]
+  navigate = true
+  light = false
+  syntax-theme = Monokai Extended
+[credential]
+	helper = /usr/libexec/git-core/git-credential-libsecret

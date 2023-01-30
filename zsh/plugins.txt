@@ -4,7 +4,7 @@ ohmyzsh/ohmyzsh plugins/git
 ohmyzsh/ohmyzsh plugins/git-auto-fetch
 ohmyzsh/ohmyzsh plugins/gitfast
 ohmyzsh/ohmyzsh plugins/gitignore
-ohmyzsh/ohmyzsh plugins/magic-enter
+# ohmyzsh/ohmyzsh plugins/magic-enter
 ohmyzsh/ohmyzsh plugins/oc
 ohmyzsh/ohmyzsh plugins/sudo
 ohmyzsh/ohmyzsh plugins/systemadmin
@@ -24,7 +24,7 @@ romkatv/powerlevel10k powerlevel10k
 
 zpm-zsh/clipboard 
 djui/alias-tips
-agkozak/zsh-z
+#agkozak/zsh-z
 #laggardkernel/zsh-thefuck
 
 

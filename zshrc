@@ -18,7 +18,7 @@ ZGEN_RESET_ON_CHANGE=(
 
 [[ ! -f "$ZGENOM_DIR/zgenom.zsh" ]] && git clone https://github.com/jandamm/zgenom.git "$ZGENOM_DIR"
 source "$ZGENOM_DIR/zgenom.zsh"
-zgenom autoupdate --background
+zgenom autoupdate
 if ! zgenom saved; then
   zgenom ohmyzsh
   [[ -f "$ZSHDIR/plugins.txt" ]] && zgenom loadall < "$ZSHDIR/plugins.txt"
@@ -49,7 +49,8 @@ bindkey '^q' push-line-or-edit      # [Ctrl-q] - kill command, paste in on next 
 #######################
 
 # undo the 'rm -i' alias from omz
-# unalias rm
+unalias rm
+unalias cp
 
 # directory navigation
 setopt auto_cd
@@ -66,4 +67,3 @@ setopt autopushd
 #zprof
 
 return 0
-

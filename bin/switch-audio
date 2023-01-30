@@ -1,0 +1,12 @@
+#!/bin/bash
+
+speakers='alsa_output.usb-Logitech_G560_Gaming_Speaker_00000000-00.iec958-stereo'
+headset='alsa_output.usb-Razer_Razer_USB_Audio_Controller_000000000000000000000000-00.stereo-chat'
+
+current=$(pactl get-default-sink)
+
+if [ "$current" == "$speakers" ]; then
+  pactl set-default-sink "$headset"
+elif [ "$current" == "$headset" ]; then
+  pactl set-default-sink "$speakers"
+fi
