@@ -1,0 +1,9 @@
+zstyle ':antidote:bundle' file ${ZDOTDIR:-~}/.zplugins
+zstyle ':antidote:static' file ${ZDOTDIR:-~}/.zplugins.zsh
+zstyle ':antidote:bundle' use-friendly-names 'yes'
+zstyle ':antidote:plugin:*' defer-options '-p'
+
+if [[ -r $DOTFILES/local/zsh/zstyles.local.zsh ]]; then
+  . $DOTFILES/local/zsh/zstyles.local.zsh
+fi
+

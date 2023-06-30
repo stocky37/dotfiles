@@ -1,16 +1,8 @@
-typeset -U path
+#!/bin/zsh
 
-path=(~/.poetry/bin ~/.local/bin ~/.jbang/bin $path)
-
-export LANG=en_US.UTF-8
-export EDITOR=vim
-export JAVA_HOME=/usr/lib/jvm/java-openjdk
-export ZDOTDIR="$HOME"
-export ZSHDIR="$ZDOTDIR/.zsh"
-export ZGEN_DIR="${ZGEN_DIR:-$ZDOTDIR/.zgenom}"
-export ZGENOM_DIR="$ZGEN_DIR/zgenom"
-export XDG_CONFIG_HOME="$HOME/.config"
-
-# external configs
-[[ -f ~/.zshenv.private ]] && source ~/.zshenv.private
-[[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
+# We need to tell ZSH that configs are in ZDOTDIR.  This is the easiest way to
+# make sure it always gets loaded.
+export ZDOTDIR="${HOME}/.zsh"
+if [[ -f "${ZDOTDIR}/.zshenv" ]]; then
+  . "${ZDOTDIR}/.zshenv"
+fi
