@@ -12,6 +12,7 @@ ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:lib/completion.zsh
 ohmyzsh/ohmyzsh path:lib/directories.zsh
 ohmyzsh/ohmyzsh path:lib/functions.zsh
+ohmyzsh/ohmyzsh path:lib/git.zsh
 ohmyzsh/ohmyzsh path:lib/grep.zsh
 ohmyzsh/ohmyzsh path:lib/key-bindings.zsh
 ohmyzsh/ohmyzsh path:lib/misc.zsh

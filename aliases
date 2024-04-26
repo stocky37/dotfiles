@@ -24,4 +24,6 @@ alias cdt="cd $(mktemp -d)"
 
 
 alias kust=kustomize
+alias kustinit=kustomize init --autodetect --recursive
 alias kssh="kitty +kitten ssh"
+alias r='cd $(git root)'
