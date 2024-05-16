@@ -1,20 +1,32 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 ##? clone - clone a git repo
+
+# TODO:
+# - handle http cloning as well
+
 if [[ -z "$1" ]]; then
-  echo "What git repo do you want?" >&2
+  echo "What git repo do you want? (format: [<domain>]:[<user>/]repo" >&2
   return 1
 fi
-local user repo
-if [[ "$1" = */* ]]; then
-  user=${1%/*}
-  repo=${1##*/}
-else
-  user=stocky37
-  repo=$1
-fi
 
-local giturl="github.com"
-local dest=${XDG_PROJECTS_HOME:-~/Projects}/repos/$user/$repo
+local url="$1"; shift
+
+local default_giturl="${CLONE_DEFAULT_GIT_URL:-github.com}"
+local default_user="${CLONE_DEFAULT_USER:-$(whoami)}"
+
+local domain git_path user repo
+
+giturl=${url%:*}
+git_path=${url#*:}
+user=${git_path%/*}
+repo=${git_path##*/}
+
+[[ "$giturl" == "$git_path" ]] && giturl="$default_giturl"
+[[ "$user" == "$repo" ]] && user="$default_user"
+
+repo=$(basename -s .git $repo)
+
+local dest=${XDG_PROJECTS_HOME:-$HOME}/repos/$domain/$user/$repo
 
 if [[ ! -d $dest ]]; then
   git clone --recurse-submodules "git@${giturl}:${user}/${repo}.git" "$dest"
