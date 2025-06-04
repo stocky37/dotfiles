@@ -26,7 +26,7 @@ repo=${git_path##*/}
 
 repo=$(basename -s .git $repo)
 
-local dest=${XDG_PROJECTS_HOME:-$HOME}/repos/$domain/$user/$repo
+local dest=${XDG_PROJECTS_HOME:-$HOME}/src/$domain/$user/$repo
 
 if [[ ! -d $dest ]]; then
   git clone --recurse-submodules "git@${giturl}:${user}/${repo}.git" "$dest"
