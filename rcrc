@@ -1,0 +1,2 @@
+DOTFILES_DIRS="~/.dotfiles/public ~/.dotfiles/private"
+COPY_ALWAYS="ssh/*"
