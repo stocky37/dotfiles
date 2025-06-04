@@ -1,11 +1,7 @@
 # .zplugins - antidote plugins file
-$ZDOTDIR/plugins/p10k-instant-prompt
 
 # Pre-reqs
 mattmc3/zfunctions
-
-# Clone-only utils
-
 
 # omz
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
@@ -43,10 +39,6 @@ ohmyzsh/ohmyzsh path:plugins/virtualenvwrapper
 
 # zsh-utils
 belak/zsh-utils path:history
-
-# prompt
-romkatv/powerlevel10k
-#$ZDOTDIR/plugins/prompt
 
 # other plugins
 unixorn/git-extra-commands
