@@ -37,4 +37,4 @@ function rcm-link-zsh-startup-files() {
   done
 }
 
-rcm-link-zsh-startup-files .zshrc .zshenv .zprofile .zlogin .zlogout .zplugins .zstyles .p10k.zsh
+rcm-link-zsh-startup-files .zshrc .zshenv

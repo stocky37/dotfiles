@@ -66,5 +66,5 @@
   navigate = true
   light = false
   syntax-theme = Monokai Extended
-[credential]
-	helper = /usr/libexec/git-core/git-credential-libsecret
+#[credential]
+#	helper = /usr/libexec/git-core/git-credential-libsecret

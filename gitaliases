@@ -22,7 +22,8 @@
   redo = "!git cim -a && git pf"
 
   # initialiase a repo
-  it = "!git init && git commit --allow-empty -m 'root'"
+  it = "!git init && git commit --allow-empty -m root"
+  birth = "!git init && git commit --allow-empty -m birth"
 
   # cleanup branches with missing remotes
   bc = "!f() { git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D; }; f"

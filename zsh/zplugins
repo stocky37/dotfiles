@@ -4,15 +4,12 @@
 mattmc3/zfunctions
 
 # omz
+ohmyzsh/ohmyzsh path:lib/functions.zsh
+
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:lib/completion.zsh
 ohmyzsh/ohmyzsh path:lib/directories.zsh
-ohmyzsh/ohmyzsh path:lib/functions.zsh
-ohmyzsh/ohmyzsh path:lib/git.zsh
-ohmyzsh/ohmyzsh path:lib/grep.zsh
 ohmyzsh/ohmyzsh path:lib/key-bindings.zsh
-ohmyzsh/ohmyzsh path:lib/misc.zsh
-ohmyzsh/ohmyzsh path:lib/termsupport.zsh
 
 # omz plugins
 #ohmyzsh/ohmyzsh path:plugins/argocd
@@ -35,13 +32,13 @@ ohmyzsh/ohmyzsh path:plugins/systemadmin
 ohmyzsh/ohmyzsh path:plugins/systemd
 ohmyzsh/ohmyzsh path:plugins/tmux
 ohmyzsh/ohmyzsh path:plugins/urltools
-ohmyzsh/ohmyzsh path:plugins/virtualenvwrapper
+#ohmyzsh/ohmyzsh path:plugins/virtualenvwrapper
 
 # zsh-utils
 belak/zsh-utils path:history
 
 # other plugins
-unixorn/git-extra-commands
+#unixorn/git-extra-commands
 
 # utilities
 # $ZDOTDIR/.aliases

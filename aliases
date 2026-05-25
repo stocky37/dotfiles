@@ -1,29 +1,21 @@
-# Unix
-alias mkdir="mkdir -p"
+# single letter aliases
 alias e="$EDITOR"
 alias v="$VISUAL"
+alias g="git"
+alias r='cd $(git root)'
 
-# Pretty print the path
-alias path='echo $PATH | tr -s ":" "\n"'
+# kustomize
+alias kust=kustomize
+alias kustinit=kustomize init --autodetect --recursive
 
 # Common typos
 alias gti=git
 alias tnk=tkn
 
+# misc commands
+alias mkdir="mkdir -p"
+alias path='echo $PATH | tr -s ":" "\n"'
 alias gpg=gpg2
 alias base64="base64 -w 0"
 alias ssh-finger="ssh-keygen -l -E md5 -f"
-
-# extra git aliases
-alias lg="git lg"
-alias lga="git lga"
-alias lg1="git lg1"
-alias lga1="git lga1"
-
-alias cdt="cd $(mktemp -d)"
-
-
-alias kust=kustomize
-alias kustinit=kustomize init --autodetect --recursive
 alias kssh="kitty +kitten ssh"
-alias r='cd $(git root)'
