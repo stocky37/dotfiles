@@ -11,6 +11,7 @@ export JAVA_HOME=/usr/lib/jvm/java-openjdk
 typeset -gU path fpath cdpath
 path+=(~/.local/bin)
 
+# Source private/local versions if they exist
 [[ -f "${ZDOTDIR:-$HOME}/zshenv.local" ]] && . "${ZDOTDIR:-$HOME}/zshenv.local"
 [[ -f "${ZDOTDIR:-$HOME}/zshenv.private" ]] && . "${ZDOTDIR:-$HOME}/zshenv.private"
 
