@@ -1,4 +1,27 @@
-[[ -f "${ZDOTDIR:-~}/zshrc" ]] && source "${ZDOTDIR:-~}/zshrc"
-[[ -f "${ZDOTDIR:-~}/zshrc.private" ]] && source "${ZDOTDIR:-~}/zshrc.private"
-[[ -f "${ZDOTDIR:-~}/zshrc.local" ]] && source "${ZDOTDIR:-~}/zshrc.local"
+autoload -Uz compinit && compinit
+
+src() {
+  local filename=$1; shift
+  [[ -f "${filename}" ]] && . "${filename}"
+  [[ -f "${filename}.local" ]] && . "${filename}.local"
+  [[ -f "${filename}.private" ]] && . "${filename}.private"
+}
+
+for f in "${ZDOTDIR:-~}/.zshrc.d/"*.zsh(N-.); do
+  source "$f"
+done
+
+src ~/.aliases
+
+# misc.
+unset CASE_SENSITIVE HYPHEN_INSENSITIVE
+unalias rm
+unalias cp
+
+# setup starship prompt
+eval "$(starship init zsh)"
+
+# Source private/local versions if they exist
+[[ -f "${ZDOTDIR:-~}/.zshrc.private" ]] && source "${ZDOTDIR:-~}/.zshrc.private"
+[[ -f "${ZDOTDIR:-~}/.zshrc.local" ]] && source "${ZDOTDIR:-~}/.zshrc.local"
 

@@ -1,4 +1,17 @@
-[[ -f "${ZDOTDIR:-~}/zshenv" ]] && source "${ZDOTDIR:-~}/zshenv"
-[[ -f "${ZDOTDIR:-~}/zshenv.private" ]] && source "${ZDOTDIR:-~}/zshenv.private"
-[[ -f "${ZDOTDIR:-~}/zshenv.local" ]] && source "${ZDOTDIR:-~}/zshenv.local"
+# apps
+export EDITOR=vim
+export PAGER=less
+export LESS='-R'
+
+# java
+export LANG=en_US.UTF-8
+export JAVA_HOME=/usr/lib/jvm/java-openjdk
+
+# path
+typeset -gU path fpath cdpath
+path+=(~/.local/bin)
+
+# Source private/local versions if they exist
+[[ -f "${ZDOTDIR:-$HOME}/.zshenv.local" ]] && . "${ZDOTDIR:-$HOME}/.zshenv.local"
+[[ -f "${ZDOTDIR:-$HOME}/.zshenv.private" ]] && . "${ZDOTDIR:-$HOME}/.zshenv.private"
 

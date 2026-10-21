@@ -1,5 +1,5 @@
 zstyle ':antidote:bundle' path-style short 
-zstyle ':antidote:bundle' file ${ZDOTDIR:-~}/zplugins
+zstyle ':antidote:bundle' file ${ZDOTDIR:-~}/.zplugins
 zstyle ':antidote:static' file ${ZDOTDIR:-~}/.zplugins.zsh
 zstyle ':antidote:plugin:*' defer-options '-p'
 

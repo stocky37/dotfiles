@@ -1,0 +1,21 @@
+# Target directory for symlinks (default: $HOME)
+target_dir = "$HOME"
+
+# Files/patterns to exclude from symlinking
+exclude_files = [
+    "**/.*",           # Hidden files (git, claude, etc.)
+    "LICENSE",
+    "README.md",
+    "doot/**",         # doot configuration itself
+]
+
+# Override exclusions for specific files we DO want to symlink
+include_files = [
+    "zsh/.*",          # Include .zshrc and .zshenv in zsh/
+]
+
+# Automatically prefix root-level items with dot (default: true)
+implicit_dot = true
+
+# Don't prefix these top-level items with dot
+implicit_dot_ignore = ["bin"]
