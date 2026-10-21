@@ -7,3 +7,10 @@ export LESS='-R'
 export LANG=en_US.UTF-8
 export JAVA_HOME=/usr/lib/jvm/java-openjdk
 
+# path
+typeset -gU path fpath cdpath
+path+=(~/.local/bin)
+
+[[ -f "${ZDOTDIR:-$HOME}/zshenv.local" ]] && . "${ZDOTDIR:-$HOME}/zshenv.local"
+[[ -f "${ZDOTDIR:-$HOME}/zshenv.private" ]] && . "${ZDOTDIR:-$HOME}/zshenv.private"
+

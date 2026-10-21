@@ -6,7 +6,8 @@ alias r='cd $(git root)'
 
 # kustomize
 alias kust=kustomize
-alias kustinit=kustomize init --autodetect --recursive
+alias kustinit="kustomize init --autodetect --recursive"
+alias kb="kustomize build --enable-helm"
 
 # Common typos
 alias gti=git
@@ -19,3 +20,6 @@ alias gpg=gpg2
 alias base64="base64 -w 0"
 alias ssh-finger="ssh-keygen -l -E md5 -f"
 alias kssh="kitty +kitten ssh"
+
+
+alias yql="yq -C | less -R"
