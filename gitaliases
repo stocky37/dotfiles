@@ -1,7 +1,6 @@
 [alias]
   aa = add --all
   ap = add --patch
-  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
   ci = commit -v
   co = checkout
   pf = push --force-with-lease
@@ -9,12 +8,16 @@
   br = branch
   cim = commit --amend --no-edit -v
   lg = log --oneline --graph --decorate --all
-  unstage = restore --staged
-  last = log -1
   pom = push -u origin master
   rao = remote add origin
-  fix = commit --fixup
   sw = switch
+
+
+  # handy "new" commands
+  unstage = restore --staged
+  last = log -1
+  fix = commit --fixup
+  new = switch --no-track origin/main -c
 
   # checkout gitlab merge request
   mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
